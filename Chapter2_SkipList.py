@@ -26,8 +26,7 @@ def intersectWithSkips(a, b):
             else:
                 return intersectWithSkips(a[1:], b)
         except: 
-            return intersectWithSkips(a[1:], b)
-        
+            return intersectWithSkips(a[1:], b) 
     else:
         try:
             if (b[floor(sqrt(len(b)))] <= a[0]):
@@ -69,6 +68,7 @@ def positionalIntersect(pA, pB, k):
                 j += 1
     return intersection
     
-sentences = ["At Dogs and Cats Rule we strive to provide your pet with superior quality brands you won't find in a typical box store or supermarket.", "If your dog or cat has been diagnosed with diabetes mellitus, it's easy to feel alone—but you're not.", "Jul 6, 2011 - The war between cats and dogs is a topic of debate from Hollywood to hometowns."]
-s = positionalIndex(sentences)
-positionalIntersect(s['cats'], s['dogs'], 3)
+if __name__ == '__main__': # Example Usage
+    sentences = ["At Dogs and Cats Rule we strive to provide your pet with superior quality brands you won't find in a typical box store or supermarket.", "If your dog or cat has been diagnosed with diabetes mellitus, it's easy to feel alone—but you're not.", "Jul 6, 2011 - The war between cats and dogs is a topic of debate from Hollywood to hometowns."]
+    s = positionalIndex(sentences)
+    positionalIntersect(s['cats'], s['dogs'], 3) # Note that since no normalization was done, the first sentence or 'document' containing 'Dogs and Cats' will not be matched due to capitalization
